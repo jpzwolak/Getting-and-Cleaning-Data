@@ -3,8 +3,17 @@
 The dataset used in this project comes from [Human Activity Recognition Using Smartphones](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) study. You can read more about it [here](http://www.insideactivitytracking.com/data-science-activity-tracking-and-the-battle-for-the-worlds-top-sports-brand/).
 
 ## Variables
-Data from the dowloaded files are names after the actual files:
-* `subject.test`, `x.test`, `y.test`,  `subject.train`, `x.train`, `y.train`
+Data from the dowloaded files are named after the actual files:
+* `subject.test`, `x.test`, `y.test`,  `subject.train`, `x.train`, `y.train`, `features`
+
+Less intuitive names:
+* `activities` - data from the `activity_labels.txt` file 
+* `subject.data`, `x.data`, `y.data` - the previous datasets merged for further analysis; the "subject", "x" and "y" parts indicate which sets are combined; in each case I combined *.train with *.test data (in this order)
+* `matches.mean`, `matches.std` and `matches` - lists of indexces for which the activity contains mean ("mean"), standard derivation ("std") and combined both lists
+*  `sub.x.data` - data frame containing only measurements with "mean" and "std" in the description
+*  `activity.names` - vector with activity names
+*  `averages.data ` - data frame with averages of each variable for each activity and each subject
+
 x_data, y_data and subject_data merge the previous datasets to further analysis.
 features contains the correct names for the x_data dataset, which are applied to the column names stored in mean_and_std_features, a numeric vector used to extract the desired data.
 A similar approach is taken with activity names through the activities variable.
